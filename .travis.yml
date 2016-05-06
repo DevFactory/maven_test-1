@@ -1,0 +1,17 @@
+addons:
+  artifacts:
+    debug: true
+    paths:
+    - libs.zip
+    - build.zip
+    - testbuild.zip
+    target_paths: 69c34250-4d62-41d1-b191-2e0aadd43eff
+after_success:
+- ./df-build.sh
+jdk:
+- oraclejdk8
+language: java
+notifications: {}
+script: mvn test -Djacoco.skip=true
+sudo: 'false'
+# Modified by Insights Service at 2016-05-06 13:58:08.455357
